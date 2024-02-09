@@ -1,0 +1,585 @@
+<!DOCTYPE html><html><head>
+      <title>VJ_7_SOLID</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///C:\Users\Korisnik\.atom\packages\markdown-preview-enhanced\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="v8-solid">V8 -SOLID</h1>
+
+<hr>
+<div style="text-align:justify">
+<p><strong>Zadatak 1</strong> U aplikaciji za rezervaciju smje&#x161;taja napravili ste klasu User i klasu Apartment u koju se unose razli&#x10D;iti tipovi apartmana (recimo da imamo samo tri kategorije &#x2192; A, B i C), s lokacijom i cijenom smje&#x161;taja. Dijagram klasa prikazan je na slici 1:</p>
+<center>
+<p><img src="https://www.dropbox.com/s/uencguqtfdgh3qs/ClsDiagBookingNO_SRP.png?raw=1" alt="clsDiagNO_SRP"><br>
+<strong>Slika 1</strong> Dijagram klasa za prvu verziju aplikacije</p>
+</center>
+<p>Razmotrite sljede&#x107;e scenarije:</p>
+<ol>
+<li>&#x160;to &#x107;e se dogoditi ukoliko booking servis promijeni na&#x10D;in rezervacije i otkaza smje&#x161;taja u apartmanima</li>
+<li>Postoji mogu&#x107;nost i promjene na&#x10D;ina kategorizacije apartmana</li>
+<li>Mo&#x17E;e se uvesti novi na&#x10D;in pla&#x107;anja</li>
+</ol>
+<p>Uzev&#x161;i sve u obzir na&#x10D;inite rje&#x161;enje koje bi na najbolji na&#x10D;in odgovorilo na navedena tri zahtjeva &#x2192; o kojem principu je rije&#x10D; u tom slu&#x10D;aju? Ponu&#x111;eno rje&#x161;enje obavezno treba imati prilo&#x17E;en pripadaju&#x107;i dijagram klasa.</p>
+<p><strong>Zadatak 2</strong> U sklopu ve&#x107; implementirane aplikacije za evidenciju &#x10D;lanstva kluba ljubitelja knjiga imate tri tipa &#x10D;lanova (zlatni, srebrni i bron&#x10D;ani). U jednom trenutku (npr. godinu nakon &#x161;to ste isporu&#x10D;ili rje&#x161;enje) tvrtka koja je naru&#x10D;ila aplikaciju &#x17E;eli uvesti jo&#x161; dva tipa &#x10D;lanova &#x2192; platinasti i dijamantni. Predlo&#x17E;ite rje&#x161;enje koje &#x107;e na najbolji na&#x10D;in omogu&#x107;iti tra&#x17E;enu fleksibilnost ili mo&#x17E;ebitne dodatne izmjene u budu&#x107;nosti. Koji princip &#x107;ete koristiti u novom dizajnu aplikacije i za&#x161;to? Simulirajte dodavanje nekoliko &#x10D;lanova sa zastupljenosti svih kategorija &#x10D;lanstva barem po jedan put. Izvr&#x161;ite ispis svih &#x10D;lanova i statusa &#x10D;lanstva.</p>
+<blockquote>
+<p>Vodite ra&#x10D;una da ve&#x107; postoje&#x107;i &#x10D;lan mo&#x17E;e promijeniti status / kategoriju</p>
+</blockquote>
+<p><strong>Zadatak 3</strong>  Radite na aplikaciji koja vodi evidenciju o raspodjeli poslova servisera stomatolo&#x161;kih stolica. Poesbnost tvrtke je da pored servisera ima i nau&#x10D;nike kao dio ugovora tvrtke i dr&#x17E;ave. Serviseri su svrstani u tri kategorije:</p>
+<ul>
+<li>po&#x10D;etnici s do tri godine radnog iskustva</li>
+<li>majstori s vi&#x161;e od tri godine radnog iskustva i polo&#x17E;enim majstorskim ispitom</li>
+<li>savjetnici su majstori koji imaju vi&#x161;e od 10 godina radnog iskustva i dodatni certifikat za servisiranje stolica</li>
+</ul>
+<p>Problem &#x107;emo pojednostavniti i smatrati kako svi serviseri imaju sljede&#x107;e metode:</p>
+<ul>
+<li>askForAdvice()</li>
+<li>giveAdvice()</li>
+<li>bringTools()</li>
+<li>performRepair()</li>
+<li>performMaintenance()</li>
+</ul>
+<p>Aplikacija je pogre&#x161;no dizajnirana prema sljede&#x107;em kodu:</p>
+<pre data-role="codeBlock" data-info="JAVA" class="language-java"><span class="token comment">// abstract class</span>
+<span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Master</span> <span class="token punctuation">{</span>
+
+	<span class="token keyword">protected</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+	<span class="token keyword">protected</span> <span class="token class-name">String</span> description<span class="token punctuation">;</span>
+
+
+
+
+	<span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">askforAdvice</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">giveAdvice</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">;</span>
+	<span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">bringTools</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">performRepair</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">;</span>
+	<span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">performMaintance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">;</span>
+
+	<span class="token keyword">protected</span> <span class="token class-name">String</span> <span class="token function">description</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+		<span class="token class-name">String</span> desc <span class="token operator">=</span> <span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getSimpleName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> desc<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+<span class="token comment">// Extensions</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">NoviceMaster</span> <span class="token keyword">extends</span> <span class="token class-name">Master</span> <span class="token punctuation">{</span>
+
+	<span class="token keyword">public</span> <span class="token class-name">NoviceMaster</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+		<span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>description <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">this</span><span class="token punctuation">.</span>description <span class="token operator">=</span> <span class="token string">&quot;NoviceMaster&quot;</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+
+
+	<span class="token punctuation">}</span>
+
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">askforAdvice</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>description <span class="token operator">+</span> <span class="token string">&quot; ask for an advice...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">giveAdvice</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>description <span class="token operator">+</span> <span class="token string">&quot; provide useful advice ...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">bringTools</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Every repairman can and should bring a tool bag ...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">performRepair</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>description <span class="token operator">+</span> <span class="token string">&quot; performing a repair ... &quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">performMaintance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>description <span class="token operator">+</span> <span class="token string">&quot;provide a good maintenance ...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ExperincedMaster</span> <span class="token keyword">extends</span> <span class="token class-name">Master</span> <span class="token punctuation">{</span>
+
+
+	<span class="token keyword">public</span> <span class="token class-name">ExperincedMaster</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>description <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">this</span><span class="token punctuation">.</span>description <span class="token operator">=</span> <span class="token string">&quot;ExperincedMaster&quot;</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+
+	<span class="token punctuation">}</span>
+
+
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">askforAdvice</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>description <span class="token operator">+</span> <span class="token string">&quot; ask for an advice...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">giveAdvice</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>description <span class="token operator">+</span> <span class="token string">&quot; provide useful advice ...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">bringTools</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Every repairman can and should bring a tool bag ...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">performRepair</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>description <span class="token operator">+</span> <span class="token string">&quot; performing a repair ... &quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">performMaintance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>description <span class="token operator">+</span> <span class="token string">&quot;provide a good maintenance ...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SupremeMaster</span> <span class="token keyword">extends</span> <span class="token class-name">Master</span> <span class="token punctuation">{</span>
+
+	<span class="token keyword">public</span> <span class="token class-name">SupremeMaster</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>description <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">this</span><span class="token punctuation">.</span>description <span class="token operator">=</span> <span class="token string">&quot;SupremeMaster&quot;</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">askforAdvice</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>description <span class="token operator">+</span> <span class="token string">&quot; ask for an advice...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">giveAdvice</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>description <span class="token operator">+</span> <span class="token string">&quot; provide useful advice ...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">bringTools</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Every repairman can and should bring a tool bag ...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">performRepair</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>description <span class="token operator">+</span> <span class="token string">&quot; performing a repair ... &quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">performMaintance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>description <span class="token operator">+</span> <span class="token string">&quot;provide a good maintenance ...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Apprentice</span> <span class="token keyword">extends</span> <span class="token class-name">Master</span> <span class="token punctuation">{</span>
+
+
+	<span class="token keyword">public</span> <span class="token class-name">Apprentice</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		<span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>description<span class="token operator">==</span><span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">this</span><span class="token punctuation">.</span>description <span class="token operator">=</span> <span class="token string">&quot;Apprentice&quot;</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">askforAdvice</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>description <span class="token operator">+</span> <span class="token string">&quot; ask for an advice...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">giveAdvice</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+		<span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Exception</span><span class="token punctuation">(</span><span class="token string">&quot;Can&apos;t give an advice!!!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">bringTools</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+		<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Every repairman can and should bring a tool bag ...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">performRepair</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+
+		<span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Exception</span><span class="token punctuation">(</span><span class="token string">&quot;Still can not perform repairs!!!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+	<span class="token annotation punctuation">@Override</span>
+	<span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">performMaintance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+
+		<span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Exception</span><span class="token punctuation">(</span><span class="token string">&quot;Not able to do maintance jobs...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Application client</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">ArrayList</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">List</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token punctuation">{</span>
+
+	<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+		<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Master</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">NoviceMaster</span><span class="token punctuation">(</span><span class="token string">&quot;Marko&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ExperincedMaster</span><span class="token punctuation">(</span><span class="token string">&quot;Josipa&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">SupremeMaster</span><span class="token punctuation">(</span><span class="token string">&quot;Vedrana&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Apprentice</span><span class="token punctuation">(</span><span class="token string">&quot;Stipe&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+		list<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>mst <span class="token operator">-&gt;</span> mst<span class="token punctuation">.</span><span class="token function">askforAdvice</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		list<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>mst <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
+			<span class="token keyword">try</span> <span class="token punctuation">{</span>
+				mst<span class="token punctuation">.</span><span class="token function">giveAdvice</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+				<span class="token comment">// TODO Auto-generated catch block</span>
+				e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">}</span>
+		<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+	<span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+
+</pre><p>Pokrenite aplikaciju i analizirajte na koji na&#x10D;in biste mogli unaprijediti prilo&#x17E;eno rje&#x161;enje. Koji princip je ovdje naru&#x161;en i za&#x161;to? Realizirajte i rje&#x161;enje kada klasa SupremeMaster ima metodu evaluateWork (Master repairman) koja vr&#x161;i evaluaciju rada svih ostalih servisera.</p>
+<p><strong>Zadatak 4</strong> Dio aplikativnog rje&#x161;enja za online kuhara ima nekoliko modula &#x2192; za primjer uzmimo sljede&#x107;e:</p>
+<ol>
+<li>Modul za mediteransku kuhinju</li>
+<li>Modul za kinesku kuhinju</li>
+<li>Modul za meksi&#x10D;ku kuhinju</li>
+<li>Modul za indijsku kuhinju</li>
+</ol>
+<p>Svi moduli implementiraju su&#x10D;elje IRecept koji ima nekoliko metoda kako slijedi:</p>
+<ul>
+<li>metodu generateMeditrraneanRecipe()</li>
+<li>metodu generateChineseRecipe();</li>
+<li>metodu generate MexicanRecipe();</li>
+<li>metodu generateIndianRecipe();</li>
+<li>metodu provideAdditionalInfo();</li>
+<li>metodu recommendWebSources();</li>
+</ul>
+<p>Problem je taj &#x161;to svaki modul koristi samo pripadaju&#x107;u generate metodu, ali i obje op&#x107;e metode provideAdditionalInfo(), te recommendWebsources(). Predlo&#x17E;ite rje&#x161;enje koje &#x107;e biti u skladu s ISP principom. Tako&#x111;er, simulirajte va&#x161;e rje&#x161;enje.</p>
+<p><strong>Zadatak 5</strong> Razvili ste inteligentu aplikaciju za autonomnu vo&#x17E;nju broda, aviona, helikoptera i automobila. Va&#x161; front end klijent u ovisnosti koji zadatak trebate rije&#x161;iti dinami&#x10D;ki mora kreirati bilo koji tip autonomnog, inteligentnog pilota i zadati mu da vozi pripadaju&#x107;i objekt (avion, brod, helikopter ili automobil) &#x2192; za postoje&#x107;u realizaciju to nije slu&#x10D;aj (alika 2). Postoje&#x107;e rje&#x161;enje je na&#x10D;elno realizirano kako je prikazano na prilo&#x17E;enom dijagramu klasa na slici 2. Va&#x161; zadatak je da primjenom principa DIP omogu&#x107;ite bolje rje&#x161;enje koje &#x107;e biti fleksibilnije i jednostavnije za odr&#x17E;avanje. Omogu&#x107;ite simulaciju bilo kojeg tipa inteligentnog voza&#x10D;a/pilota.</p>
+<center>
+<p><img src="https://www.dropbox.com/s/5jt1n83asuj0l2a/ClsIntPilots.png?raw=1" alt="clsDiagIntelligent"><br>
+<strong>Slika 2</strong> Realizacija aplikacije bez zadovoljenja principa DIP</p>
+</center>
+<blockquote>
+<p>Sva rje&#x161;enja i obja&#x161;njenja potrebno je predati putem predvi&#x111;enih poveznica na sustavu Merlin</p>
+</blockquote>
+</div>
+<hr>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
