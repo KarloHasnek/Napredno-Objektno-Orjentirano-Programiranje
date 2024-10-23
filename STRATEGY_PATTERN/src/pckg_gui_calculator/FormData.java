@@ -1,8 +1,10 @@
 package pckg_gui_calculator;
 
-import pckg_gui_calculator.strategy.CalculationStrategy;
+import pckg_gui_calculator.strategy_operations.CalculationStrategy;
 
-public record FormData(double first, double second, double result, CalculationStrategy calculationStrategy) {
+import java.io.Serializable;
+
+public record FormData(double first, double second, double result, CalculationStrategy calculationStrategy) implements Serializable {
 
     @Override
     public String toString() {

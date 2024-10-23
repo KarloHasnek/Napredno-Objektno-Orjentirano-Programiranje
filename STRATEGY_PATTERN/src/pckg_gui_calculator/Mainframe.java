@@ -7,11 +7,12 @@ public class Mainframe extends JFrame {
 
     private ViewPanel viewPanel;
     private FormPanel formPanel;
+    private Toolbar toolbar;
 
     public Mainframe() {
 
         super("Calculator");
-        setSize(600, 400);
+        setSize(800, 600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
@@ -25,12 +26,14 @@ public class Mainframe extends JFrame {
     private void initComps() {
         viewPanel = new ViewPanel();
         formPanel = new FormPanel();
+        toolbar = new Toolbar();
     }
 
     private void layoutComps() {
         setLayout(new BorderLayout());
         add(viewPanel, BorderLayout.CENTER);
         add(formPanel, BorderLayout.SOUTH);
+        add(toolbar, BorderLayout.NORTH);
     }
 
     private void activateComps() {

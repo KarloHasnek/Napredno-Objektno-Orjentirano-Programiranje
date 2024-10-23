@@ -1,6 +1,6 @@
 package pckg_gui_calculator;
 
-import pckg_gui_calculator.strategy.*;
+import pckg_gui_calculator.strategy_operations.*;
 
 import javax.swing.*;
 import javax.swing.border.Border;

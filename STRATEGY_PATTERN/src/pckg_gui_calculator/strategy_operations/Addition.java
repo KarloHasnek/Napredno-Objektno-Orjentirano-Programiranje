@@ -1,4 +1,4 @@
-package pckg_gui_calculator.strategy;
+package pckg_gui_calculator.strategy_operations;
 
 
 public class Addition implements CalculationStrategy {
