@@ -34,7 +34,12 @@ public class Mainframe extends JFrame {
     }
 
     private void activateComps() {
-
+        formPanel.setFormPanelListener(new FormPanelListener() {
+            @Override
+            public void formPanelEventOccured(FormData formRecord) {
+                viewPanel.appendText(formRecord.toString());
+            }
+        });
     }
 
 

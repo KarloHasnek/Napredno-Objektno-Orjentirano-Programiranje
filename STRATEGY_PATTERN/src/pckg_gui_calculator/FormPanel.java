@@ -5,6 +5,8 @@ import pckg_gui_calculator.strategy.*;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class FormPanel extends JPanel {
 
@@ -13,6 +15,7 @@ public class FormPanel extends JPanel {
     private JTextField resultField;
     private JComboBox<CalculationStrategy> operationComboBox;
     private JButton submitButton;
+    private FormPanelListener formPanelListener;
 
     public FormPanel() {
         Dimension dims = getPreferredSize();
@@ -81,8 +84,33 @@ public class FormPanel extends JPanel {
         add(submitButton, gbc);
     }
 
-    private void activateComps() {
-
+    public void setFormPanelListener(FormPanelListener formPanelListener) {
+        this.formPanelListener = formPanelListener;
     }
 
+    private void activateComps() {
+
+        submitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("submit button clicked");
+                double first = Double.parseDouble(firstNumberField.getText());
+                double second = Double.parseDouble(secondNumberField.getText());
+                CalculationStrategy calculationStrategy = (CalculationStrategy) operationComboBox.getSelectedItem();
+                double result = calculationStrategy.calculate(first, second);
+                resultField.setText(String.valueOf(result));
+                FormData formData = new FormData(first, second, result, calculationStrategy);
+                if (formPanelListener != null) {
+                    formPanelListener.formPanelEventOccured(formData);
+                    resetForm();
+                }
+            }
+        });
+    }
+
+    private void resetForm() {
+        firstNumberField.setText("");
+        secondNumberField.setText("");
+        firstNumberField.requestFocus();
+    }
 }
