@@ -18,4 +18,8 @@ public class ViewPanel extends JPanel {
     public void appendText(String result) {
         textArea.append(result + "\n");
     }
+
+    public void clearText() {
+        textArea.setText("\n");
+    }
 }

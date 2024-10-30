@@ -12,6 +12,7 @@ public class Toolbar extends JPanel implements ActionListener {
     private JButton loadTextButton;
     private JButton loadObjectsButton;
     private JButton clearButton;
+    private ToolbarListener toolbarListener;
 
     public Toolbar() {
 
@@ -53,7 +54,44 @@ public class Toolbar extends JPanel implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource() == saveAsTextButton) {
+            System.out.println("Clicked: " + saveAsTextButton.getActionCommand());
+            if (toolbarListener != null) {
+                toolbarListener.toolbarEventOccured(saveAsTextButton.getActionCommand());
+            }
+        }
 
+        if(ae.getSource() == saveObjectsButton) {
+            System.out.println("Clicked: " + saveObjectsButton.getActionCommand());
+            if (toolbarListener != null) {
+                toolbarListener.toolbarEventOccured(saveObjectsButton.getActionCommand());
+            }
+        }
+
+        if(ae.getSource() == loadObjectsButton) {
+            System.out.println("Clicked: " + loadObjectsButton.getActionCommand());
+            if (toolbarListener != null) {
+                toolbarListener.toolbarEventOccured(loadObjectsButton.getActionCommand());
+            }
+        }
+
+        if(ae.getSource() == loadTextButton) {
+            System.out.println("Clicked: " + loadTextButton.getActionCommand());
+            if (toolbarListener != null) {
+                toolbarListener.toolbarEventOccured(loadTextButton.getActionCommand());
+            }
+        }
+
+        if(ae.getSource() == clearButton) {
+            System.out.println("Clicked: " + clearButton.getActionCommand());
+            if (toolbarListener != null) {
+                toolbarListener.toolbarEventOccured(clearButton.getActionCommand());
+            }
+        }
+    }
+
+    public void setToolbarListener(ToolbarListener toolbarListener) {
+        this.toolbarListener = toolbarListener;
     }
 }

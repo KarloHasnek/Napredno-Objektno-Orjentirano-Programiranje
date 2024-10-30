@@ -1,0 +1,6 @@
+Realizirati strategiju za spremanje objekata klase FormData
+Realizirati strategiju za citanje tih objekata iz bin datoteke
+Hard coded filePath zamjeniti sa JFileChooser-om (default folder "DATA")
+Rijesiti problem sa read/overwrite kada se load-a novi file (JoptionPane da/ne save)
+Osigurati provjere unosa u formu (potrebno je koristiti JOptionPane)
+Obavezno ispravno primjeniti upravljanje iznimkama
