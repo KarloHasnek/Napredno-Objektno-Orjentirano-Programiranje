@@ -33,11 +33,28 @@ public class TestApp {
         controller.runCommand();
         controller.setCommand(addCar1);
         controller.runCommand();
+        listElements(users);
+        listElements(cars);
         controller.undoCommand();
         controller.undoCommand();
+        listElements(users);
+        listElements(cars);
         controller.redoCommand();
         controller.setCommand(clearUsers);
         controller.runCommand();
 
+    }
+
+    private static <E> void listElements(ArrayList<E> list) {
+        if (list.isEmpty()) {
+            System.out.println("List is empty!");
+        } else {
+            System.out.println("/////////////////////////////////////////////////////");
+            System.out.println("List:");
+            for (E element : list) {
+                System.out.println(element);
+            }
+            System.out.println("/////////////////////////////////////////////////////");
+        }
     }
 }
