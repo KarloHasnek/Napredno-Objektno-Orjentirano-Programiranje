@@ -10,5 +10,11 @@ public class TestContentWriter {
         controllerContent.writeToFile(content, filePath);
         controllerContent.setWriteStrategy(new BufferedWriterStrategy());
         controllerContent.writeToFile(additionalContent, filePath);
+
+        controllerContent.setWriteStrategy(new FileOutputStreamStrategy());
+        controllerContent.writeToFile(content, filePath);
+
+        controllerContent.setWriteStrategy(new FilesStrategy());
+        controllerContent.writeToFile(additionalContent, filePath);
     }
 }
