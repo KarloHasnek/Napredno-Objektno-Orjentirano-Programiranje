@@ -9,5 +9,8 @@ public class TestApp {
         fillColorDecorator.drawShape();
         LineColorDecorator lineColorDecorator = new LineColorDecorator(fillColorDecorator, SHAPECOLOR.GREEN);
         lineColorDecorator.drawShape();
+
+        BasicShape LineStyleDecorator = new LineStyleDecorator(new LineColorDecorator(new FillColorDecorator(new Circle(), SHAPECOLOR.RED),SHAPECOLOR.BLUE ), LINESTYLE.DASHED);
+        LineStyleDecorator.drawShape();
     }
 }

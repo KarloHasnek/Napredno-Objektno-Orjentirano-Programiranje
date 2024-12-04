@@ -41,6 +41,6 @@ public class LineColorDecorator extends ShapeDecorator {
 
     @Override
     public String toString() {
-        return this.decoratedShape.toString() + " filled with color " + lineColor;
+        return this.decoratedShape.toString() + " with line color " + lineColor;
     }
 }
