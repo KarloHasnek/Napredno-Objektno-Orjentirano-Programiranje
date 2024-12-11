@@ -10,7 +10,7 @@ public class TestApp {
         LineColorDecorator lineColorDecorator = new LineColorDecorator(fillColorDecorator, SHAPECOLOR.GREEN);
         lineColorDecorator.drawShape();
 
-        BasicShape LineStyleDecorator = new LineStyleDecorator(new LineColorDecorator(new FillColorDecorator(new Circle(), SHAPECOLOR.RED),SHAPECOLOR.BLUE ), LINESTYLE.DASHED);
-        LineStyleDecorator.drawShape();
+        BasicShape cirlce2 = new LineStyleDecorator(new LineColorDecorator(new FillColorDecorator(new Circle(), SHAPECOLOR.RED),SHAPECOLOR.BLUE ), LINESTYLE.DASHED);
+        cirlce2.drawShape();
     }
 }
