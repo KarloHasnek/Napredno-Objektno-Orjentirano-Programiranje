@@ -1,4 +1,4 @@
-package pckg_icecream_no_way;
+package pckg_decorator_revision.pckg_icecream_no_way;
 
 public class VanillaIceCream extends IceCream{
 

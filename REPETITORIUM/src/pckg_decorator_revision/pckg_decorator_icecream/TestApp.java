@@ -1,4 +1,4 @@
-package pckg_decorator_icecream;
+package pckg_decorator_revision.pckg_decorator_icecream;
 
 public class TestApp {
 

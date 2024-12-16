@@ -1,8 +1,8 @@
-package pckg_decorator_icecream;
+package pckg_decorator_revision.pckg_decorator_icecream;
 
-public class HazelnutDecorator extends IceCreamDecorator{
+public class DarkChocolateDecorator extends IceCreamDecorator {
 
-    protected HazelnutDecorator(int amount, IceCream iceCream) {
+    protected DarkChocolateDecorator(int amount, IceCream iceCream) {
         super(amount, iceCream);
     }
 
