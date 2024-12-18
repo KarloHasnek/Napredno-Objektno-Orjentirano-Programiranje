@@ -1,4 +1,4 @@
-package pckg_no_factory;
+package pckg_simple_factory;
 
 public class CarStore {
 

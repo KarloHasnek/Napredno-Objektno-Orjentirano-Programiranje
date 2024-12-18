@@ -1,19 +1,19 @@
-package pckg_no_factory;
+package pckg_simple_factory;
 
-public class SUV extends Car {
+public class Sedan extends Car{
 
-    protected SUV(String brand, String model) {
+    protected Sedan(String brand, String model) {
         super(brand, model);
     }
 
     @Override
     protected void produceCar() {
-        System.out.println("Producing SUV: " + this.brand + " " + this.model);
+        System.out.println("Producing Sedan: " + this.brand + " " + this.model);
     }
 
     @Override
     public String toString() {
-        return "SUV{" +
+        return "Sedan{" +
                 "brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 '}';

@@ -1,0 +1,2 @@
+prouciti razliku i kad se koristi
+factory method vs abstract factory
