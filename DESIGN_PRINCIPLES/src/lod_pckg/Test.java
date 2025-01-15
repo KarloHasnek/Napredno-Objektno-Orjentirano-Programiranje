@@ -18,6 +18,6 @@ public class Test {
         CustomerNew customerNew = new CustomerNew(orderNew);
 
         double priceNew = customerNew.getOrderPrice();
-        System.out.println("Price new: " + priceNew);
+        System.out.println("Price new: " + priceNew); 
     }
 }
