@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/DESIGN_PRINCIPLES/DESIGN_PRINCIPLES.iml" filepath="$PROJECT_DIR$/DESIGN_PRINCIPLES/DESIGN_PRINCIPLES.iml" />
       <module fileurl="file://$PROJECT_DIR$/FACTORY/FACTORY.iml" filepath="$PROJECT_DIR$/FACTORY/FACTORY.iml" />
       <module fileurl="file://$PROJECT_DIR$/JAVA_GENERICS/JAVA_GENERICS.iml" filepath="$PROJECT_DIR$/JAVA_GENERICS/JAVA_GENERICS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MVC/MVC.iml" filepath="$PROJECT_DIR$/MVC/MVC.iml" />
       <module fileurl="file://$PROJECT_DIR$/OBSERVER/OBSERVER.iml" filepath="$PROJECT_DIR$/OBSERVER/OBSERVER.iml" />
       <module fileurl="file://$PROJECT_DIR$/REPETITORIUM/REPETITORIUM.iml" filepath="$PROJECT_DIR$/REPETITORIUM/REPETITORIUM.iml" />
       <module fileurl="file://$PROJECT_DIR$/STRATEGY_PATTERN/STRATEGY_PATTERN.iml" filepath="$PROJECT_DIR$/STRATEGY_PATTERN/STRATEGY_PATTERN.iml" />
